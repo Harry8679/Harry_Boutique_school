@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ product.name }}
+{% endblock %}
+
+{% block body %}
+	<div class="mt-4">
+		<h1>Liste de nos produits</h1>
+		<div class="card mb-3">
+			<img class="card-img-top" src="{{ product.illustration }}" alt="{{ product.name }}">
+			<div class="card-body">
+				<h5 class="card-title">{{ product.name }}</h5>
+				<p class="card-text">{{ product.content }}</p>
+				<p class="card-text">
+					Prix :
+					<small class="text-muted">{{ (product.price/100)|number_format('2', ',', ' ') }}
+						€</small>
+				</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}
