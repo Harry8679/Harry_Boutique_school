@@ -6,6 +6,9 @@
 		</button>
 		<div class="collapse navbar-collapse" id="mynavbar">
 			<ul class="navbar-nav me-auto">
+				<li class="nav-item">
+					<a href="{{ path('app_products') }}" class="nav-link">Liste des produits</a>
+				</li>
 				{% if not (app.user) %}
 					<li class="nav-item">
 						<a class="nav-link" href="{{ path('app_register') }}">Inscription</a>
