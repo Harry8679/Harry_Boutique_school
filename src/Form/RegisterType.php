@@ -11,6 +11,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Validator\Constraints\Length;
 
 class RegisterType extends AbstractType
 {
@@ -19,18 +20,21 @@ class RegisterType extends AbstractType
         $builder
             ->add('firstName', TextType::class, [
                 'label' => 'Votre prénom',
+                'constraints' => new Length(30, 3),
                 'attr' => [
                     'placeholder' => 'Veuillez renseigner votre prénom'
                 ]
             ])
             ->add('lastName', TextType::class, [
                 'label' => 'Votre nom',
+                'constraints' => new Length(30, 2),
                 'attr' => [
                     'placeholder' => 'Veuillez renseigner votre nom de famille'
                 ]
             ])
             ->add('email', EmailType::class, [
                 'label' => 'Votre email',
+                'constraints' => new Length(50, 5),
                 'attr' => [
                     'placeholder' => 'Veuillez renseigner votre email'
                 ]
