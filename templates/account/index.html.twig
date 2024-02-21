@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccountController!
+{% endblock %}
+
+{% block body %}
+	<h1>Mon Espace</h1>
+	<p>
+		<em>Bonjour</em>
+		<strong>{{ app.user.fullName }}</strong>
+	</p>
+	<p>Bienvenue sur votre espace.</p>
+	<p>Cet espace est strictement personnel et vous permettra de gérer vos informations.</p>
+	<hr>
+	- Mes informations
+	<br/>
+	- Modifier mon profil
+	<br/>
+	- Voir mes commandes
+	<br/>
+	- Gérer mes adresses.
+	<hr>
+{% endblock %}
