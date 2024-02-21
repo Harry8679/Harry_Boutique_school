@@ -8,14 +8,17 @@
 	<div class="mt-4">
 		<h1>Liste de nos produits</h1>
 		<div class="card mb-3">
-			<img class="card-img-top" src="{{ product.illustration }}" alt="{{ product.name }}">
+			<img class="card-img-top my_image" src="/assets/images/{{ product.illustration }}" alt="{{ product.name }}">
 			<div class="card-body">
 				<h5 class="card-title">{{ product.name }}</h5>
 				<p class="card-text">{{ product.content }}</p>
 				<p class="card-text">
 					Prix :
-					<small class="text-muted">{{ (product.price/100)|number_format('2', ',', ' ') }}
-						€</small>
+					<span class="badge bg-secondary">
+						<small class="text-muted">{{ (product.price/100)|number_format('2', ',', ' ') }}
+							€</small>
+					</span>
+					<a href="#" class="btn btn-primary">Ajouter au panier</a>
 				</p>
 			</div>
 		</div>
