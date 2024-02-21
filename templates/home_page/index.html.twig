@@ -4,7 +4,12 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container mt-3">
+	<div class="mt-3">
+		{% for message in app.flashes('success') %}
+			<div class="alert alert-success">
+				{{ message }}
+			</div>
+		{% endfor %}
 		<h2>Bienvenue sur Harry Boutique</h2>
 		<div class="mt-4 p-5 bg-primary text-white rounded">
 			<h1>Profitez des meilleurs produits</h1>
