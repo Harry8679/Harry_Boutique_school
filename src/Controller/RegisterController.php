@@ -16,6 +16,10 @@ class RegisterController extends AbstractController
     #[Route('/inscription', name: 'app_register')]
     public function index(Request $request, UserPasswordHasherInterface $encode, EntityManagerInterface $manager): Response
     {
+        if ($this->getUser()) {
+            return $this->redirectToRoute('app_home_page');
+        }
+
         $user = new User();
         $form = $this->createForm(RegisterType::class, $user);
         $form->handleRequest($request);
@@ -32,7 +36,7 @@ class RegisterController extends AbstractController
 
             $this->addFlash('success', 'Félicitation, votre compte a bien été créé. Veuillez vous connecter.');
 
-            return $this->redirectToRoute('app_home_page');
+            return $this->redirectToRoute('app_login');
         }
         
         return $this->render('register/register.html.twig', [
