@@ -5,6 +5,11 @@
 
 {% block body %}
 	<h1>Mon Espace</h1>
+    {% for message in app.flashes('success') %}
+			<div class="alert alert-success">
+				{{ message }}
+			</div>
+		{% endfor %}
 	<p>
 		<em>Bonjour</em>
 		<strong>{{ app.user.fullName }}</strong>
@@ -12,7 +17,10 @@
 	<p>Bienvenue sur votre espace.</p>
 	<p>Cet espace est strictement personnel et vous permettra de gérer vos informations.</p>
 	<hr>
-	- Mes informations
+	- <a href={{ path('app_account_profile') }}>Mes informations</a>
+	<br/>
+	-
+	<a href="{{ path('app_account_change_password') }}">Changer mon mot de passe</a>
 	<br/>
 	- Modifier mon profil
 	<br/>

@@ -5,11 +5,7 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="mynavbar">
-			<ul
-				class="navbar-nav me-auto">
-				{# <li class="nav-item">
-													<a class="nav-link" href="{{ path('') }}">Link</a>
-												</li> #}
+			<ul class="navbar-nav me-auto">
 				{% if not (app.user) %}
 					<li class="nav-item">
 						<a class="nav-link" href="{{ path('app_register') }}">Inscription</a>
@@ -18,6 +14,9 @@
 						<a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
 					</li>
 				{% else %}
+					<li class="nav-item">
+						<a class="nav-link" href="{{ path('app_account') }}">Mon Compte</a>
+					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
 					</li>
