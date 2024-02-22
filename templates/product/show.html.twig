@@ -14,12 +14,12 @@
 				<p class="card-text">{{ product.content }}</p>
 				<p class="card-text">
 					Prix :
-					<span class="badge bg-secondary">
-						<small class="text-muted">{{ (product.price/100)|number_format('2', ',', ' ') }}
-							€</small>
+					<span class="badge bg-secondary p-2">
+						{{ (product.price/100)|number_format('2', ',', ' ') }}
+						€
 					</span>
-					<a href="#" class="btn btn-primary">Ajouter au panier</a>
 				</p>
+				<a href="#" class="btn btn-primary">Ajouter au panier</a>
 			</div>
 		</div>
 	</div>
